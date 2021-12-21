@@ -11,7 +11,7 @@ buzzwords = ["HTML", "CSS", "Java"]
 # Query Terms
 title = "Developer"
 location = "New York, NY"
-pages = 5 # 15 listings per page
+pages = 1 # 15 listings per page
 
 # Get necessary parameters for pages
 base_url = "https://indeed.com"
@@ -32,7 +32,7 @@ def getPageSoup(page_url):
 job_urls = []
 
 # Iterate through the first 4 pages (15 job listings per page)
-for page_index in range(0, pages + 1):
+for page_index in range(0, pages):
     # Prepare paged url
     starting_index = page_index * 10
     page_url = url + f"&start={starting_index}"
