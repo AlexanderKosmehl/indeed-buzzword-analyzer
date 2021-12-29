@@ -79,10 +79,12 @@ for job_description in job_descriptions:
         if buzzword in job_description:
             buzzword_counts[buzzword] += 1
 
+# Sort by counts
+sorted_buzzwords = {k: v for k, v in sorted(buzzword_counts.items(), key=lambda x: x[1], reverse=True)}
 
 # Plots the results
 plt.title("Buzzword Analysis")
 plt.xlabel("Buzzword")
 plt.ylabel("Occurences")
-plt.bar(buzzword_counts.keys(), buzzword_counts.values())
+plt.bar(sorted_buzzwords.keys(), sorted_buzzwords.values())
 plt.show()
