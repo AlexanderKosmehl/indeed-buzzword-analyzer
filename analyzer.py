@@ -3,18 +3,18 @@ import requests
 from bs4 import BeautifulSoup
 
 # Buzzwords
-buzzwords = ["HTML", "CSS", "Java"]
+buzzwords = ["HTML", "Python", "Java", "Kotlin", "Office", "Excel"]
 
 # Captcha Workaround:
 # Replace de.indeed.com -> indeed.com and Koeln -> New York, NY
 
 # Query Terms
-title = "Developer"
-location = "New York, NY"
+title = "Android"
+location = "Köln"
 pages = 1 # 15 listings per page
 
 # Get necessary parameters for pages
-base_url = "https://indeed.com"
+base_url = "https://de.indeed.com"
 url = f"{base_url}/jobs?q={title}&l={location}"
 
 
