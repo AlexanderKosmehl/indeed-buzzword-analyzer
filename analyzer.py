@@ -21,7 +21,7 @@ def getPageSoup(page_url):
 def getJobDescriptions(title, location, num_pages=1):
     """
     Looks up the first num_pages x 15 job descriptions and returns them as a list.
-    
+
     Parameters
     ----------
 
@@ -82,7 +82,7 @@ def getJobDescriptions(title, location, num_pages=1):
 def getBuzzwordCounts(job_descriptions, buzzwords):
     """
     Goes through the job_descriptions and checks for buzzword occurences.
-    
+
     Parameters
     ----------
 
@@ -99,3 +99,16 @@ def getBuzzwordCounts(job_descriptions, buzzwords):
                 buzzword_counts[buzzword] += 1
 
     return buzzword_counts
+
+
+def getSortedBuzzwordCounts(buzzword_counts):
+    """
+    Sorts the buzzword_count dictionary and returns it.
+
+    Parameters
+    ----------
+
+    buzzword_counts: dict<string:int>
+        Dicionary of Buzzword occurances
+    """
+    return {k: v for k, v in sorted(buzzword_counts.items(), key=lambda x: x[1], reverse=True)}
