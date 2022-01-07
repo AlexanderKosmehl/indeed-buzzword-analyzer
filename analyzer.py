@@ -64,8 +64,6 @@ def getJobDescriptions(title, location, num_pages=1):
 
     # Iterate through all job listings
     for idx, job_url in enumerate(job_urls):
-        print(f"{idx + 1} / {len(job_urls)}")
-
         # Get a single page
         job_soup = getPageSoup(job_url)
 
