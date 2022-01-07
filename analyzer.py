@@ -15,6 +15,9 @@ def getPageSoup(page_url):
     page = requests.get(page_url, headers)
     soup = BeautifulSoup(page.content, "html.parser")
 
+    if "Captcha solve page" in soup.text:
+        raise Exception("Currently blocked by LinkedIn :(")
+
     return soup
 
 
@@ -40,7 +43,7 @@ def getJobDescriptions(title, location, num_pages=1):
 
     job_urls = []
 
-    # Iterate through the first 4 pages (15 job listings per page)
+    # Iterate through the first num_pages pages (15 job listings per page)
     for page_index in range(0, num_pages):
         # Prepare paged url
         starting_index = page_index * 10
