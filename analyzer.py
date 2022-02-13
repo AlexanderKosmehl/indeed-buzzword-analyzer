@@ -98,7 +98,7 @@ def getBuzzwordCounts(job_descriptions, buzzwords):
 
     for job_description in job_descriptions:
         for buzzword in buzzwords:
-            if buzzword in job_description:
+            if buzzword.lower() in job_description.lower():
                 buzzword_counts[buzzword] += 1
 
     return buzzword_counts
